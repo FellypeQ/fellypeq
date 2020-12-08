@@ -1,5 +1,8 @@
 ### Hi there 👋
 
+![alt text](https://github-readme-stats.vercel.app/api/top-langs/?username=fellypeq&theme=dark)
+![alt text](https://github-readme-stats.vercel.app/api?username=fellypeq&show_icons=true&theme=dark)
+
 <!--
 **FellypeQ/fellypeq** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
