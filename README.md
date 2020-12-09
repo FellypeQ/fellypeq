@@ -1,24 +1,32 @@
 ### Hi there, I'm Fellype 👋
 
-<a href="https://github.com/anuraghazra/github-readme-stats">
-  <img align="center" src="https://github-readme-stats.vercel.app/api?username=fellypeq&show_icons=true&theme=dark" alt="Anurag's github stats" />
-</a>
+<div>
+    <h3>Hi there, I'm Fellype 👋</h3>
+    <hr />
+    <h4>Total pontuation of Katas in CodeWars</h4>
+    <hr />
+    <img
+    src="https://www.codewars.com/users/Fellype.Queiroz/badges/large"
+    alt="codewars"
+    />
+    <h4>Languages in GitHub Projects</h4>
+    <hr />
+    <p>
+    These are the languages most used in projects posted on GitHub, I also
+    have knowledge and practical experience in relational databases (T-SQL,
+    MySQL)
+    </p>
     <div>
-      <h1>teste</h1>
-      <img
-        src="https://www.codewars.com/users/Fellype.Queiroz/badges/large"
-        alt="codewars"
-      />
-      <img
+    <img
         src="https://github-readme-stats.vercel.app/api/top-langs/?username=fellypeq&theme=dark"
         alt="languages"
-      />
-      <img
+    />
+    <img
         src="https://github-readme-stats.vercel.app/api?username=fellypeq&show_icons=true&theme=dark"
         alt="status"
-      />
+    />
     </div>
-
+</div>
 <!--
 **FellypeQ/fellypeq** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
@@ -32,4 +40,4 @@ Here are some ideas to get you started:
 - 📫 How to reach me: ...
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
--->
+  -->
