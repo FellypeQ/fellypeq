@@ -1,9 +1,20 @@
 ### Hi there, I'm Fellype 👋
 
-![alt text](https://www.codewars.com/users/Fellype.Queiroz/badges/large)
-
-![alt text](https://github-readme-stats.vercel.app/api/top-langs/?username=fellypeq&theme=dark)
-![alt text](https://github-readme-stats.vercel.app/api?username=fellypeq&show_icons=true&theme=dark)
+    <div>
+      <h1>teste</h1>
+      <img
+        src="https://www.codewars.com/users/Fellype.Queiroz/badges/large"
+        alt="codewars"
+      />
+      <img
+        src="https://github-readme-stats.vercel.app/api/top-langs/?username=fellypeq&theme=dark"
+        alt="languages"
+      />
+      <img
+        src="https://github-readme-stats.vercel.app/api?username=fellypeq&show_icons=true&theme=dark"
+        alt="status"
+      />
+    </div>
 
 <!--
 **FellypeQ/fellypeq** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
