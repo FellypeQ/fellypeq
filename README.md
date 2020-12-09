@@ -1,5 +1,8 @@
 ### Hi there, I'm Fellype 👋
 
+<a href="https://github.com/anuraghazra/github-readme-stats">
+  <img align="center" src="https://github-readme-stats.vercel.app/api?username=fellypeq&show_icons=true&theme=dark" alt="Anurag's github stats" />
+</a>
     <div>
       <h1>teste</h1>
       <img
