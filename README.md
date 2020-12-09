@@ -2,7 +2,6 @@
 
 ![alt text](https://www.codewars.com/users/Fellype.Queiroz/badges/large)
 
-<br>
 ![alt text](https://github-readme-stats.vercel.app/api/top-langs/?username=fellypeq&theme=dark)
 ![alt text](https://github-readme-stats.vercel.app/api?username=fellypeq&show_icons=true&theme=dark)
 
