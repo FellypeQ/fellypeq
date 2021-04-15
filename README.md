@@ -50,6 +50,10 @@
     alt="bootstrap"
     />
     <img
+    src="https://img.shields.io/badge/-materialui-black?style=for-the-badge&logo=materialui"
+    alt="materialui"
+    />
+    <img
     src="https://img.shields.io/badge/-html5-black?style=for-the-badge&logo=html5"
     alt="html5"
     />
@@ -58,7 +62,7 @@
     alt="css3"
     />
     <img
-    src="https://img.shields.io/badge/-express.js-black?style=for-the-badge&logo=express.js"
+    src="https://img.shields.io/badge/-express-black?style=for-the-badge&logo=express"
     alt="express.js"
     />
     <img
