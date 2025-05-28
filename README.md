@@ -2,7 +2,7 @@
     <h3>Hi there, I'm Fellype 👋</h3>
     <p>Contact me at</p>
     <a
-    href="https://www.linkedin.com/in/fellype-almeida-queiroz/"
+    href="https://www.linkedin.com/in/fellype-almeida-eng-software/"
     style="margin: 10px"
     >
     <img
