@@ -6,9 +6,10 @@
     style="margin: 10px"
     >
     <img
-        src="https://www.presserv.com/wp-content/uploads/2020/07/linkedin-logo.png"
+        src="https://raw.githubusercontent.com/linnovate/root-me/refs/heads/master/src/images/icons/linkedin.ico"
         alt="linkedin icon"
         width="30px"
+        marginRight="24px"
     />
     </a>
     <a href="mailto:fellype.ads@gmail.com" style="margin: 10px">
@@ -34,12 +35,20 @@
     alt="typescript"
     />
     <img
-    src="https://img.shields.io/badge/-angular-black?style=for-the-badge&logo=angular"
-    alt="angular"
+    src="https://img.shields.io/badge/-ruby-black?style=for-the-badge&logo=ruby"
+    alt="ruby"
     />
     <img
     src="https://img.shields.io/badge/-react-black?style=for-the-badge&logo=react"
     alt="react"
+    />
+    <img
+    src="https://img.shields.io/badge/-rubyOnRails-black?style=for-the-badge&logo=rubyOnRails"
+    alt="ruby on rails"
+    />
+    <img
+    src="https://img.shields.io/badge/-angular-black?style=for-the-badge&logo=angular"
+    alt="angular"
     />
     <img
     src="https://img.shields.io/badge/-node.js-black?style=for-the-badge&logo=node.js"
