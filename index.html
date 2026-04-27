@@ -130,15 +130,35 @@
       };
     </script>
     <style>
+      html.dark {
+        color-scheme: dark;
+      }
+
+      html.light {
+        color-scheme: light;
+      }
+
       body {
         background-color: #09090d;
         color: #e4e1eb;
       }
+
+      html.light body {
+        background-color: #f9f9fb;
+        color: #1b1b22;
+      }
+
       .glass-card {
         background: rgba(22, 22, 30, 0.7);
         backdrop-filter: blur(12px);
         border: 1px solid rgba(255, 255, 255, 0.05);
       }
+
+      html.light .glass-card {
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+      }
+
       .gradient-text {
         background: linear-gradient(90deg, #ff7a00 0%, #7a3cff 100%);
         background-clip: text;
@@ -165,12 +185,62 @@
         -webkit-mask-composite: xor;
         mask-composite: exclude;
       }
+
+      html.light .topbar-theme {
+        background: rgba(255, 255, 255, 0.8) !important;
+        border-color: rgba(0, 0, 0, 0.08) !important;
+      }
+
+      html.light .footer-theme {
+        background: #ffffff !important;
+        border-color: rgba(0, 0, 0, 0.08) !important;
+      }
+
+      html.light .bg-surface {
+        background-color: #ffffff !important;
+      }
+
+      html.light .bg-surface-container-lowest {
+        background-color: #f7f6f9 !important;
+      }
+
+      html.light .bg-surface-container-high {
+        background-color: #ece9f0 !important;
+      }
+
+      html.light .text-on-surface {
+        color: #1b1b22 !important;
+      }
+
+      html.light .text-on-surface-variant {
+        color: #5b616e !important;
+      }
+
+      html.light .text-gray-400 {
+        color: #6b7280 !important;
+      }
+
+      html.light .border-white\/5 {
+        border-color: rgba(0, 0, 0, 0.08) !important;
+      }
+
+      html.light .border-white\/10 {
+        border-color: rgba(0, 0, 0, 0.1) !important;
+      }
+
+      html.light .top-nav-link:hover {
+        color: #ff7a00 !important;
+      }
+
+      html.light .hero-visual-overlay {
+        background: linear-gradient(to top, rgba(255, 255, 255, 0.45), transparent) !important;
+      }
     </style>
   </head>
   <body class="antialiased">
     <!-- TopAppBar -->
     <nav
-      class="fixed top-0 w-full z-50 bg-[#09090D]/80 backdrop-blur-md border-b border-white/10 font-noto-serif antialiased"
+      class="topbar-theme fixed top-0 w-full z-50 bg-[#09090D]/80 backdrop-blur-md border-b border-white/10 font-noto-serif antialiased"
     >
       <div
         class="max-w-[1440px] mx-auto flex justify-between items-center px-8 py-4"
@@ -183,31 +253,31 @@
         </a>
         <div class="hidden md:flex items-center gap-8">
           <a
-            class="text-gray-400 font-medium hover:text-white transition-colors duration-300"
+            class="top-nav-link text-gray-400 font-medium hover:text-white transition-colors duration-300"
             href="#about"
             data-i18n="nav.about"
             >About</a
           >
           <a
-            class="text-gray-400 font-medium hover:text-white transition-colors duration-300"
+            class="top-nav-link text-gray-400 font-medium hover:text-white transition-colors duration-300"
             href="#expertise"
             data-i18n="nav.specialties"
             >Specialties</a
           >
           <a
-            class="text-gray-400 font-medium hover:text-white transition-colors duration-300"
+            class="top-nav-link text-gray-400 font-medium hover:text-white transition-colors duration-300"
             href="#values"
             data-i18n="nav.values"
             >Values</a
           >
           <a
-            class="text-gray-400 font-medium hover:text-white transition-colors duration-300"
+            class="top-nav-link text-gray-400 font-medium hover:text-white transition-colors duration-300"
             href="#innovation"
             data-i18n="nav.innovation"
             >Innovation</a
           >
           <a
-            class="text-gray-400 font-medium hover:text-white transition-colors duration-300"
+            class="top-nav-link text-gray-400 font-medium hover:text-white transition-colors duration-300"
             href="#contact"
             data-i18n="nav.contact"
             >Contact</a
@@ -229,6 +299,7 @@
               >language</span
             >
             <span
+              id="theme-toggle"
               class="material-symbols-outlined cursor-pointer hover:text-orange-500 transition-colors"
               >dark_mode</span
             >
@@ -304,7 +375,7 @@
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNRNtap2NWtrduZ7uzz6uZ86dP8Dfs4xNCWVxJ1DYvXKX5ByxQ_B4jie6YnzhHVd1Uyw8K40Y6R2seTzkazbPy5CgVAjm4dzv1R1iTmYO92J5UXnTqY2r-dqi6OEwMvjl3mLMJ7Cob8elK8B9iOy3C4XB9c6uQdHo6eAuIhv4LjdvtlX8z6Qow9v-wbLscN_wEhwGvANKsCQwzfrnPik8N-jL3gHA-S6eQYQeNRIoA66GZmwikQd1pxCLgUxK_12LojpdRM2sDS78"
               />
               <div
-                class="absolute inset-0 bg-gradient-to-t from-[#09090D] via-transparent to-transparent"
+                class="hero-visual-overlay absolute inset-0 bg-gradient-to-t from-[#09090D] via-transparent to-transparent"
               ></div>
             </div>
             <!-- Stats Overlays -->
@@ -450,7 +521,7 @@
               </p>
             </div>
             <div
-              class="md:col-span-1 bg-[#16161E] p-8 rounded-3xl border border-white/5"
+              class="md:col-span-1 bg-surface-container-high p-8 rounded-3xl border border-white/5"
             >
               <span
                 class="material-symbols-outlined text-orange-500 text-4xl mb-6"
@@ -633,7 +704,7 @@
       </section>
     </main>
     <!-- Footer -->
-    <footer class="bg-[#09090D] border-t border-white/5 py-12 px-8">
+    <footer class="footer-theme bg-[#09090D] border-t border-white/5 py-12 px-8">
       <div
         class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6"
       >
@@ -792,8 +863,50 @@
       const langPt = document.getElementById("lang-pt");
       const langEn = document.getElementById("lang-en");
       const whatsappButtons = document.querySelectorAll(".js-whatsapp-cta");
+      const themeToggle = document.getElementById("theme-toggle");
+
+      const THEME_STORAGE_KEY = "lly-theme";
 
       let currentLanguage = "en";
+
+      function applyTheme(theme) {
+        const isLight = theme === "light";
+
+        document.documentElement.classList.remove("light", "dark");
+        document.documentElement.classList.add(isLight ? "light" : "dark");
+
+        if (themeToggle) {
+          themeToggle.textContent = isLight ? "light_mode" : "dark_mode";
+          themeToggle.setAttribute(
+            "aria-label",
+            isLight ? "Switch to dark mode" : "Switch to light mode",
+          );
+          themeToggle.setAttribute("title", isLight ? "Dark mode" : "Light mode");
+        }
+      }
+
+      function getInitialTheme() {
+        try {
+          const storedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+          return storedTheme === "light" ? "light" : "dark";
+        } catch {
+          return "dark";
+        }
+      }
+
+      function toggleTheme() {
+        const nextTheme = document.documentElement.classList.contains("light")
+          ? "dark"
+          : "light";
+
+        applyTheme(nextTheme);
+
+        try {
+          localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+        } catch {
+          // Ignore storage failures and keep theme in memory.
+        }
+      }
 
       function setLanguage(lang) {
         const dict = translations[lang];
@@ -829,6 +942,10 @@
         langEn.addEventListener("click", () => setLanguage("en"));
       }
 
+      if (themeToggle) {
+        themeToggle.addEventListener("click", toggleTheme);
+      }
+
       whatsappButtons.forEach((button) => {
         button.addEventListener("click", () => {
           const link = generateWhatsAppLink(
@@ -840,6 +957,7 @@
         });
       });
 
+      applyTheme(getInitialTheme());
       setLanguage("en");
     </script>
   </body>
