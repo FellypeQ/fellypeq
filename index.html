@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lly Architecture | Infraestrutura de Inteligência</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Noto+Serif:wght@500;600&amp;family=Space+Grotesk:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#393840",
+                        "on-primary-fixed-variant": "#753400",
+                        "inverse-surface": "#e4e1eb",
+                        "on-error": "#690005",
+                        "on-background": "#e4e1eb",
+                        "inverse-primary": "#994700",
+                        "primary-fixed-dim": "#ffb68b",
+                        "on-secondary-container": "#cbb8ff",
+                        "on-surface-variant": "#e0c0af",
+                        "primary-fixed": "#ffdbc8",
+                        "surface-tint": "#ffb68b",
+                        "on-tertiary": "#003919",
+                        "primary-container": "#ff7a00",
+                        "tertiary-container": "#00b860",
+                        "inverse-on-surface": "#303037",
+                        "on-secondary-fixed": "#22005d",
+                        "tertiary-fixed": "#6bfe9c",
+                        "primary": "#ffb68b",
+                        "on-primary": "#522300",
+                        "surface-dim": "#13131a",
+                        "on-secondary-fixed-variant": "#5400cc",
+                        "surface": "#13131a",
+                        "outline-variant": "#584235",
+                        "surface-container-high": "#2a2931",
+                        "outline": "#a78b7c",
+                        "surface-container-highest": "#34343c",
+                        "on-primary-fixed": "#321200",
+                        "on-tertiary-fixed": "#00210c",
+                        "on-error-container": "#ffdad6",
+                        "surface-variant": "#34343c",
+                        "secondary-fixed": "#e9ddff",
+                        "on-tertiary-container": "#00401e",
+                        "secondary": "#cfbdff",
+                        "background": "#13131a",
+                        "on-secondary": "#3a0093",
+                        "error": "#ffb4ab",
+                        "secondary-fixed-dim": "#cfbdff",
+                        "surface-container": "#1f1f26",
+                        "surface-container-lowest": "#0e0e14",
+                        "tertiary": "#4ae183",
+                        "error-container": "#93000a",
+                        "on-primary-container": "#5c2800",
+                        "on-tertiary-fixed-variant": "#005228",
+                        "secondary-container": "#5e00e4",
+                        "surface-container-low": "#1b1b22",
+                        "tertiary-fixed-dim": "#4ae183",
+                        "on-surface": "#e4e1eb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "lg": "48px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "sm": "12px",
+                        "xl": "80px",
+                        "gutter": "24px",
+                        "margin": "32px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Noto Serif"],
+                        "label-caps": ["Space Grotesk"],
+                        "body-md": ["Inter"],
+                        "h2": ["Noto Serif"],
+                        "body-lg": ["Inter"],
+                        "h1": ["Noto Serif"]
+                    },
+                    "fontSize": {
+                        "h3": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "h2": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "h1": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #09090D; color: #e4e1eb; }
+        .glass-card { background: rgba(22, 22, 30, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .gradient-text { background: linear-gradient(90deg, #FF7A00 0%, #7A3CFF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .gradient-border { position: relative; border-radius: 0.125rem; }
+        .gradient-border::before { content: ""; position: absolute; inset: -1px; padding: 1px; border-radius: inherit; background: linear-gradient(90deg, #FF7A00, #7A3CFF); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
+    </style>
+</head>
+<body class="antialiased">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#09090D]/80 backdrop-blur-md border-b border-white/10 font-noto-serif antialiased">
+<div class="max-w-[1440px] mx-auto flex justify-between items-center px-8 py-4">
+<div class="text-2xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-purple-600">Lly</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-gray-400 font-medium hover:text-white transition-colors duration-300" href="#about">About</a>
+<a class="text-gray-400 font-medium hover:text-white transition-colors duration-300" href="#expertise">Specialties</a>
+<a class="text-gray-400 font-medium hover:text-white transition-colors duration-300" href="#values">Values</a>
+<a class="text-gray-400 font-medium hover:text-white transition-colors duration-300" href="#innovation">Innovation</a>
+<a class="text-gray-400 font-medium hover:text-white transition-colors duration-300" href="#contact">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 px-3 py-1 glass-card rounded-full text-xs font-label-caps">
+<span class="text-orange-500">PT</span>
+<span class="text-white/20">|</span>
+<span class="text-gray-400 hover:text-white cursor-pointer">EN</span>
+</div>
+<div class="flex items-center gap-4 text-gray-400">
+<span class="material-symbols-outlined cursor-pointer hover:text-orange-500 transition-colors">language</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-orange-500 transition-colors">dark_mode</span>
+</div>
+<button class="bg-primary-container text-white px-6 py-2 rounded-lg font-semibold active:scale-95 transition-transform">Consultancy</button>
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+<div class="absolute inset-0 pointer-events-none">
+<div class="absolute top-1/4 -right-1/4 w-[600px] h-[600px] bg-secondary-container/10 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-1/4 -left-1/4 w-[600px] h-[600px] bg-primary-container/10 blur-[120px] rounded-full"></div>
+</div>
+<div class="max-w-[1440px] mx-auto px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="z-10">
+<div class="inline-block px-4 py-1.5 glass-card mb-6">
+<span class="font-label-caps text-tertiary tracking-widest flex items-center gap-2">
+<span class="w-2 h-2 bg-tertiary rounded-full animate-pulse"></span>
+                            DISPONÍVEL PARA NOVOS PROJETOS
+                        </span>
+</div>
+<h1 class="font-h1 text-h1 text-on-surface mb-6">
+                        Base sólida. <br/>
+<span class="gradient-text">Infinitas possibilidades.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-10">
+                        Consultoria especializada em arquitetura de software de alta performance, unindo estabilidade corporativa e inovação de ponta para ecossistemas digitais escaláveis.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-gradient-to-r from-orange-500 to-purple-600 text-white px-8 py-4 rounded-xl font-bold flex items-center gap-3 active:scale-95 transition-all shadow-lg shadow-orange-500/20">
+                            Agendar Consultoria
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="gradient-border px-8 py-4 text-on-surface font-bold hover:bg-white/5 transition-colors">
+                            Ver Expertise
+                        </button>
+</div>
+</div>
+<div class="relative lg:h-[600px] hidden lg:block">
+<div class="absolute inset-0 glass-card rounded-3xl overflow-hidden border-white/10 shadow-2xl">
+<img class="w-full h-full object-cover opacity-60" data-alt="Futuristic software architecture abstract visualization with glowing orange and purple data lines on a dark technical background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNRNtap2NWtrduZ7uzz6uZ86dP8Dfs4xNCWVxJ1DYvXKX5ByxQ_B4jie6YnzhHVd1Uyw8K40Y6R2seTzkazbPy5CgVAjm4dzv1R1iTmYO92J5UXnTqY2r-dqi6OEwMvjl3mLMJ7Cob8elK8B9iOy3C4XB9c6uQdHo6eAuIhv4LjdvtlX8z6Qow9v-wbLscN_wEhwGvANKsCQwzfrnPik8N-jL3gHA-S6eQYQeNRIoA66GZmwikQd1pxCLgUxK_12LojpdRM2sDS78"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#09090D] via-transparent to-transparent"></div>
+</div>
+<!-- Stats Overlays -->
+<div class="absolute -bottom-6 -left-6 glass-card p-6 rounded-2xl border-white/10 shadow-xl">
+<div class="text-orange-500 font-h2 text-3xl mb-1">15+</div>
+<div class="font-label-caps text-[10px] text-gray-400">ANOS DE EXPERIÊNCIA</div>
+</div>
+<div class="absolute top-12 -right-6 glass-card p-6 rounded-2xl border-white/10 shadow-xl">
+<div class="text-purple-500 font-h2 text-3xl mb-1">99.9%</div>
+<div class="font-label-caps text-[10px] text-gray-400">DISPONIBILIDADE ARQUITETADA</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sobre Fellype Almeida -->
+<section class="py-xl bg-surface" id="about">
+<div class="max-w-[1440px] mx-auto px-8">
+<div class="flex flex-col md:flex-row gap-16 items-center">
+<div class="w-full md:w-1/3 aspect-square relative">
+<div class="absolute inset-0 bg-gradient-to-br from-orange-500 to-purple-600 rounded-2xl rotate-3"></div>
+<div class="absolute inset-0 glass-card rounded-2xl overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Professional portrait of Fellype Almeida, founder of Lly Architecture" src="https://lh3.googleusercontent.com/aida/ADBb0ugcOETpwqulM3RCYR8B6V5aGYe6i1Isew2JK0p8kXHY3MEOTSQ-9KVzG08CpeOpXC9K1tqO_UmhABaL3slwdtPa7gKmfNQXLqUDwhsoM58VK0GDoJSPILzhKaMy0QAvVvgizfgOINHazPX_ZObjUPUxcP2SJOvO833fB6ZHCmXbOe6uBcV0jf7cMoeYMYbP6kzjbwXmi9lptc_c_8JiDgVn4vVWoov9jUYjgvRl0vKUKA0Duc13vw_nAU-fWHa5mYE7uCXX14xUDw"/>
+</div>
+</div>
+<div class="w-full md:w-2/3">
+<span class="font-label-caps text-orange-500 mb-4 block">THE FOUNDER</span>
+<h2 class="font-h2 text-h2 text-on-surface mb-6">Fellype Almeida</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 leading-relaxed">
+                            Fundador da Lly Architecture, Fellype acumula mais de 15 anos de trajetória técnica, atuando na intersecção entre engenharia de software rigorosa e arquitetura visionária. Com passagens por múltiplos setores complexos, transformou desafios técnicos em vantagens competitivas de mercado.
+                        </p>
+<div class="grid grid-cols-2 gap-8">
+<div class="border-l-2 border-orange-500/30 pl-6">
+<h4 class="font-h3 text-xl text-on-surface mb-2">Multidisciplinar</h4>
+<p class="font-body-md text-gray-400">Atuação como engenheiro senior e arquiteto em ambientes de missão crítica.</p>
+</div>
+<div class="border-l-2 border-purple-500/30 pl-6">
+<h4 class="font-h3 text-xl text-on-surface mb-2">Estratégico</h4>
+<p class="font-body-md text-gray-400">Foco em alinhar débitos técnicos com objetivos reais de negócio.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Expertise Técnica - Bento Grid -->
+<section class="py-xl bg-surface-container-lowest" id="expertise">
+<div class="max-w-[1440px] mx-auto px-8">
+<div class="text-center mb-16">
+<span class="font-label-caps text-purple-500 mb-4 block uppercase tracking-widest">Tecnologia &amp; Domínio</span>
+<h2 class="font-h2 text-h2 text-on-surface">Especialização em Fintechs</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="md:col-span-2 glass-card p-10 rounded-3xl flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-orange-500 text-4xl mb-6">account_balance</span>
+<h3 class="font-h3 text-2xl mb-4">Mercado Financeiro</h3>
+<p class="font-body-md text-gray-400">Arquiteturas robustas para sistemas de alta transacionalidade, garantindo consistência e integridade de dados em tempo real.</p>
+</div>
+<div class="mt-8 flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container-high text-xs font-label-caps rounded">COMPLIANCE</span>
+<span class="px-3 py-1 bg-surface-container-high text-xs font-label-caps rounded">HIGH-THROUGHPUT</span>
+</div>
+</div>
+<div class="md:col-span-1 bg-surface-container-high p-8 rounded-3xl border border-white/5">
+<span class="material-symbols-outlined text-purple-500 text-4xl mb-6">diamond</span>
+<h3 class="font-h3 text-xl mb-4">Ruby on Rails</h3>
+<p class="font-body-md text-gray-400 text-sm">Agilidade no backend sem comprometer a maturidade do ecossistema.</p>
+</div>
+<div class="md:col-span-1 bg-surface-container-high p-8 rounded-3xl border border-white/5">
+<span class="material-symbols-outlined text-purple-500 text-4xl mb-6">dynamic_feed</span>
+<h3 class="font-h3 text-xl mb-4">NextJs &amp; React</h3>
+<p class="font-body-md text-gray-400 text-sm">Interfaces ultra-rápidas com foco em SEO e experiência do usuário.</p>
+</div>
+<div class="md:col-span-1 bg-[#16161E] p-8 rounded-3xl border border-white/5">
+<span class="material-symbols-outlined text-orange-500 text-4xl mb-6">devices</span>
+<h3 class="font-h3 text-xl mb-4">Flutter</h3>
+<p class="font-body-md text-gray-400 text-sm">Desenvolvimento cross-platform de alta fidelidade nativa.</p>
+</div>
+<div class="md:col-span-3 glass-card p-10 rounded-3xl flex items-center overflow-hidden">
+<div class="flex-1">
+<h3 class="font-h3 text-2xl mb-4">Arquitetura Orientada a Valor</h3>
+<p class="font-body-md text-gray-400 max-w-md">Não construímos apenas código. Construímos motores de crescimento sustentáveis para o seu negócio.</p>
+</div>
+<div class="hidden lg:block w-48 h-48 opacity-20">
+<img class="w-full h-full object-contain" data-alt="Complex 3D node network visualization symbolizing software architecture and connectivity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZL-Z-KNucAdGNlGfnSBMYhedKG9yYr1okZ2YCxb498SJVy0MOu_MgorlnoEAajAzAHQ73h-LmqnwD1QiN2_cDJTW4_AL79J7V3gK5qmDUksfjOmrC9GEbri8FqMZem95waa834PFJ5GcuX2NOszXMElxSoBUZh3aAhkadBWICY1d7Y7QpLXiGkdKfMcHn5hLwqoE6ZvbDM0h80AqL29k9Hkdpj7XB5n_-fPcHn9uBNL2FN5cCQg4j3f2K44dTAUi70xZGd0IXR_w"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Foco e Valor -->
+<section class="py-xl" id="values">
+<div class="max-w-[1440px] mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+<div class="lg:col-span-1">
+<h2 class="font-h2 text-h2 text-on-surface mb-6">O Pilar da Eficiência</h2>
+<p class="font-body-lg text-on-surface-variant mb-8">
+                            A tecnologia deve ser o meio, nunca o fim. Nossa abordagem foca em três pilares fundamentais que sustentam o sucesso de longo prazo.
+                        </p>
+<button class="flex items-center gap-2 text-orange-500 font-bold hover:gap-4 transition-all">
+                            CONHEÇA NOSSO PROCESSO
+                            <span class="material-symbols-outlined">arrow_right_alt</span>
+</button>
+</div>
+<div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="p-8 border-b md:border-b-0 md:border-r border-white/5">
+<span class="font-label-caps text-orange-500 block mb-6">01. ESCALABILIDADE</span>
+<h4 class="font-h3 text-xl mb-4">Crescimento Elástico</h4>
+<p class="font-body-md text-gray-400">Sistemas que respiram e crescem conforme a demanda, sem gargalos técnicos.</p>
+</div>
+<div class="p-8 border-b md:border-b-0 md:border-r border-white/5">
+<span class="font-label-caps text-purple-500 block mb-6">02. SEGURANÇA</span>
+<h4 class="font-h3 text-xl mb-4">Trust by Design</h4>
+<p class="font-body-md text-gray-400">Protocolos de segurança integrados desde o primeiro commit da arquitetura.</p>
+</div>
+<div class="p-8">
+<span class="font-label-caps text-tertiary block mb-6">03. EFICIÊNCIA</span>
+<h4 class="font-h3 text-xl mb-4">Valor Real</h4>
+<p class="font-body-md text-gray-400">Otimização de recursos e redução de latência para entrega de ROI imediato.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Inovação Lly (IA Action) -->
+<section class="py-xl bg-surface-container-high relative overflow-hidden" id="innovation">
+<div class="absolute inset-0 bg-gradient-to-r from-purple-900/10 to-orange-900/10 pointer-events-none"></div>
+<div class="max-w-[1440px] mx-auto px-8 relative z-10">
+<div class="glass-card rounded-[40px] p-12 lg:p-20 border-white/10 shadow-inner">
+<div class="max-w-3xl">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-12 h-12 bg-tertiary rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(74,225,131,0.4)]">
+<span class="material-symbols-outlined text-on-tertiary" data-weight="fill">psychology</span>
+</div>
+<span class="font-label-caps text-tertiary">LY INTELLIGENCE LAYER</span>
+</div>
+<h2 class="font-h2 text-h2 text-on-surface mb-8">IA como Catalisador de <span class="gradient-text">Engenharia</span></h2>
+<p class="font-body-lg text-on-surface-variant mb-12">
+                            Não usamos IA apenas para gerar código, mas como uma ferramenta estratégica de arquitetura. Através de sistemas inteligentes, aceleramos o ciclo de vida do desenvolvimento, detectamos vulnerabilidades preventivamente e aumentamos a precisão técnica em até 40%.
+                        </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-orange-500">speed</span>
+<div>
+<h5 class="font-h3 text-lg mb-2">Aceleração de Ciclos</h5>
+<p class="font-body-md text-gray-400">Redução drástica no tempo de prototipagem e validação de hipóteses.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-purple-500">bug_report</span>
+<div>
+<h5 class="font-h3 text-lg mb-2">Redução de Erros</h5>
+<p class="font-body-md text-gray-400">Análise estática avançada por IA para garantir código limpo e seguro.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Final -->
+<section class="py-xl" id="contact">
+<div class="max-w-[1440px] mx-auto px-8 text-center">
+<h2 class="font-h2 text-h2 mb-8">Pronto para elevar sua infraestrutura?</h2>
+<div class="flex flex-col md:flex-row justify-center items-center gap-6">
+<div class="glass-card p-4 rounded-xl flex items-center gap-4">
+<span class="material-symbols-outlined text-orange-500">mail</span>
+<span class="font-body-md">contato@lly.architecture</span>
+</div>
+<button class="bg-gradient-to-r from-orange-500 to-purple-600 text-white px-12 py-5 rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-purple-500/20 transition-all active:scale-95">
+                        Iniciar Diagnóstico
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#09090D] border-t border-white/5 py-12 px-8">
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-purple-600">Lly</div>
+<p class="font-noto-serif text-sm text-gray-500">© 2024 Lly Architecture. All rights reserved.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-noto-serif text-sm text-gray-500 hover:text-purple-400 transition-colors hover:underline" href="#">Privacy Policy</a>
+<a class="font-noto-serif text-sm text-gray-500 hover:text-purple-400 transition-colors hover:underline" href="#">Terms of Service</a>
+<a class="font-noto-serif text-sm text-gray-500 hover:text-purple-400 transition-colors hover:underline" href="#">LinkedIn</a>
+<a class="font-noto-serif text-sm text-gray-500 hover:text-purple-400 transition-colors hover:underline" href="#">GitHub</a>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 bg-tertiary rounded-full"></span>
+<span class="text-xs font-label-caps text-gray-400">INFRASTRUCTURE STABLE</span>
+</div>
+</div>
+</footer>
+</body></html>
