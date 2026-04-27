@@ -174,11 +174,12 @@
       <div
         class="max-w-[1440px] mx-auto flex justify-between items-center px-8 py-4"
       >
-        <div
+        <a
+          href="#"
           class="text-2xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-purple-600"
         >
           Lly
-        </div>
+        </a>
         <div class="hidden md:flex items-center gap-8">
           <a
             class="text-gray-400 font-medium hover:text-white transition-colors duration-300"
@@ -226,11 +227,11 @@
               >dark_mode</span
             >
           </div>
-          <button
+          <!-- <button
             class="bg-primary-container text-white px-6 py-2 rounded-lg font-semibold active:scale-95 transition-transform"
           >
             Consultancy
-          </button>
+          </button> -->
         </div>
       </div>
     </nav>
@@ -274,16 +275,18 @@
             </p>
             <div class="flex flex-wrap gap-4">
               <button
+                id="whatsapp-cta"
                 class="bg-gradient-to-r from-orange-500 to-purple-600 text-white px-8 py-4 rounded-xl font-bold flex items-center gap-3 active:scale-95 transition-all shadow-lg shadow-orange-500/20"
               >
                 Agendar Consultoria
                 <span class="material-symbols-outlined">arrow_forward</span>
               </button>
-              <button
+              <a
+                href="#expertise"
                 class="gradient-border px-8 py-4 text-on-surface font-bold hover:bg-white/5 transition-colors"
               >
                 Ver Expertise
-              </button>
+              </a>
             </div>
           </div>
           <div class="relative lg:h-[600px] hidden lg:block">
@@ -619,6 +622,7 @@
               <span class="font-body-md">fellype.ads@gmail.com</span>
             </div>
             <button
+              id="whatsapp-cta"
               class="bg-gradient-to-r from-orange-500 to-purple-600 text-white px-12 py-5 rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-purple-500/20 transition-all active:scale-95"
             >
               Iniciar Diagnóstico
@@ -639,7 +643,7 @@
             Lly
           </div>
           <p class="font-noto-serif text-sm text-gray-500">
-            © 2024 Lly Architecture. All rights reserved.
+            © 2026 Lly Architecture. All rights reserved.
           </p>
         </div>
         <div class="flex gap-8">
@@ -662,5 +666,27 @@
         </div>
       </div>
     </footer>
+    <script>
+      function generateWhatsAppLink(phone, message) {
+        const onlyNumbers = phone.replace(/\D/g, "");
+        const url = new URL(`https://api.whatsapp.com/send/?phone=${onlyNumbers}`);
+        url.searchParams.set("text", message.normalize("NFC"));
+
+        return url.toString();
+      }
+
+      const whatsappButton = document.getElementById("whatsapp-cta");
+
+      if (whatsappButton) {
+        whatsappButton.addEventListener("click", () => {
+          const link = generateWhatsAppLink(
+            "+5511982728982",
+            "Olá, vim através do site e gostaria de saber mais como amplificar minha arquitetura para alcançar novos patamares",
+          );
+
+          window.open(link, "_blank", "noopener,noreferrer");
+        });
+      }
+    </script>
   </body>
 </html>
