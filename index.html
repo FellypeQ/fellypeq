@@ -141,6 +141,7 @@
       }
       .gradient-text {
         background: linear-gradient(90deg, #ff7a00 0%, #7a3cff 100%);
+        background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
@@ -184,26 +185,31 @@
           <a
             class="text-gray-400 font-medium hover:text-white transition-colors duration-300"
             href="#about"
+            data-i18n="nav.about"
             >About</a
           >
           <a
             class="text-gray-400 font-medium hover:text-white transition-colors duration-300"
             href="#expertise"
+            data-i18n="nav.specialties"
             >Specialties</a
           >
           <a
             class="text-gray-400 font-medium hover:text-white transition-colors duration-300"
             href="#values"
+            data-i18n="nav.values"
             >Values</a
           >
           <a
             class="text-gray-400 font-medium hover:text-white transition-colors duration-300"
             href="#innovation"
+            data-i18n="nav.innovation"
             >Innovation</a
           >
           <a
             class="text-gray-400 font-medium hover:text-white transition-colors duration-300"
             href="#contact"
+            data-i18n="nav.contact"
             >Contact</a
           >
         </div>
@@ -211,9 +217,9 @@
           <div
             class="flex items-center gap-2 px-3 py-1 glass-card rounded-full text-xs font-label-caps"
           >
-            <span class="text-orange-500">PT</span>
+            <span id="lang-pt" class="text-gray-400 hover:text-white cursor-pointer">PT</span>
             <span class="text-white/20">|</span>
-            <span class="text-gray-400 hover:text-white cursor-pointer"
+            <span id="lang-en" class="text-orange-500 cursor-pointer"
               >EN</span
             >
           </div>
@@ -256,36 +262,35 @@
               <span
                 class="font-label-caps text-tertiary tracking-widest flex items-center gap-2"
               >
-                <span
-                  class="w-2 h-2 bg-tertiary rounded-full animate-pulse"
-                ></span>
-                DISPONÍVEL PARA NOVOS PROJETOS
+                <span class="w-2 h-2 bg-tertiary rounded-full animate-pulse"></span>
+                <span data-i18n="hero.availability">AVAILABLE FOR NEW PROJECTS</span>
               </span>
             </div>
             <h1 class="font-h1 text-h1 text-on-surface mb-6">
-              Base sólida. <br />
-              <span class="gradient-text">Infinitas possibilidades.</span>
+              <span data-i18n="hero.titleLine1">Solid foundation.</span> <br />
+              <span class="gradient-text" data-i18n="hero.titleLine2">Infinite possibilities.</span>
             </h1>
             <p
+              data-i18n="hero.subtitle"
               class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-10"
             >
-              Consultoria especializada em arquitetura de software de alta
-              performance, unindo estabilidade corporativa e inovação de ponta
-              para ecossistemas digitais escaláveis.
+              Specialized consultancy in high-performance software architecture,
+              combining enterprise-grade stability with cutting-edge innovation
+              for scalable digital ecosystems.
             </p>
             <div class="flex flex-wrap gap-4">
               <button
-                id="whatsapp-cta"
-                class="bg-gradient-to-r from-orange-500 to-purple-600 text-white px-8 py-4 rounded-xl font-bold flex items-center gap-3 active:scale-95 transition-all shadow-lg shadow-orange-500/20"
+                class="js-whatsapp-cta bg-gradient-to-r from-orange-500 to-purple-600 text-white px-8 py-4 rounded-xl font-bold flex items-center gap-3 active:scale-95 transition-all shadow-lg shadow-orange-500/20"
               >
-                Agendar Consultoria
+                <span data-i18n="hero.ctaPrimary">Schedule Consultancy</span>
                 <span class="material-symbols-outlined">arrow_forward</span>
               </button>
               <a
                 href="#expertise"
+                data-i18n="hero.ctaSecondary"
                 class="gradient-border px-8 py-4 text-on-surface font-bold hover:bg-white/5 transition-colors"
               >
-                Ver Expertise
+                View Expertise
               </a>
             </div>
           </div>
@@ -307,16 +312,16 @@
               class="absolute -bottom-6 -left-6 glass-card p-6 rounded-2xl border-white/10 shadow-xl"
             >
               <div class="text-orange-500 font-h2 text-3xl mb-1">15+</div>
-              <div class="font-label-caps text-[10px] text-gray-400">
-                ANOS DE EXPERIÊNCIA
+              <div data-i18n="hero.statYears" class="font-label-caps text-[10px] text-gray-400">
+                YEARS OF EXPERIENCE
               </div>
             </div>
             <div
               class="absolute top-12 -right-6 glass-card p-6 rounded-2xl border-white/10 shadow-xl"
             >
               <div class="text-purple-500 font-h2 text-3xl mb-1">99.9%</div>
-              <div class="font-label-caps text-[10px] text-gray-400">
-                DISPONIBILIDADE ARQUITETADA
+              <div data-i18n="hero.statAvailability" class="font-label-caps text-[10px] text-gray-400">
+                ARCHITECTED AVAILABILITY
               </div>
             </div>
           </div>
@@ -341,38 +346,39 @@
               </div>
             </div>
             <div class="w-full md:w-2/3">
-              <span class="font-label-caps text-orange-500 mb-4 block"
+              <span data-i18n="about.label" class="font-label-caps text-orange-500 mb-4 block"
                 >THE FOUNDER</span
               >
               <h2 class="font-h2 text-h2 text-on-surface mb-6">
                 Fellype Almeida
               </h2>
               <p
+                data-i18n="about.bio"
                 class="font-body-lg text-body-lg text-on-surface-variant mb-8 leading-relaxed"
               >
-                Fundador da Lly Architecture, Fellype acumula mais de 15 anos de
-                trajetória técnica, atuando na intersecção entre engenharia de
-                software rigorosa e arquitetura visionária. Com passagens por
-                múltiplos setores complexos, transformou desafios técnicos em
-                vantagens competitivas de mercado.
+                Founder of Lly Architecture, Fellype brings over 15 years of
+                technical expertise, working at the intersection of rigorous
+                software engineering and visionary architecture. Across complex
+                industries, he has consistently turned technical challenges into
+                competitive market advantages.
               </p>
               <div class="grid grid-cols-2 gap-8">
                 <div class="border-l-2 border-orange-500/30 pl-6">
-                  <h4 class="font-h3 text-xl text-on-surface mb-2">
-                    Multidisciplinar
+                  <h4 data-i18n="about.pillar1Title" class="font-h3 text-xl text-on-surface mb-2">
+                    Multidisciplinary
                   </h4>
-                  <p class="font-body-md text-gray-400">
-                    Atuação como engenheiro senior e arquiteto em ambientes de
-                    missão crítica.
+                  <p data-i18n="about.pillar1Text" class="font-body-md text-gray-400">
+                    Performance as a senior engineer and architect in
+                    mission-critical environments.
                   </p>
                 </div>
                 <div class="border-l-2 border-purple-500/30 pl-6">
-                  <h4 class="font-h3 text-xl text-on-surface mb-2">
-                    Estratégico
+                  <h4 data-i18n="about.pillar2Title" class="font-h3 text-xl text-on-surface mb-2">
+                    Strategic
                   </h4>
-                  <p class="font-body-md text-gray-400">
-                    Foco em alinhar débitos técnicos com objetivos reais de
-                    negócio.
+                  <p data-i18n="about.pillar2Text" class="font-body-md text-gray-400">
+                    Focused on aligning technical debt decisions with real
+                    business goals.
                   </p>
                 </div>
               </div>
@@ -385,11 +391,12 @@
         <div class="max-w-[1440px] mx-auto px-8">
           <div class="text-center mb-16">
             <span
+              data-i18n="expertise.label"
               class="font-label-caps text-purple-500 mb-4 block uppercase tracking-widest"
-              >Tecnologia &amp; Domínio</span
+              >Technology &amp; Domain</span
             >
-            <h2 class="font-h2 text-h2 text-on-surface">
-              Especialização em Fintechs
+            <h2 data-i18n="expertise.title" class="font-h2 text-h2 text-on-surface">
+              Specialization in Fintechs
             </h2>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -401,10 +408,10 @@
                   class="material-symbols-outlined text-orange-500 text-4xl mb-6"
                   >account_balance</span
                 >
-                <h3 class="font-h3 text-2xl mb-4">Mercado Financeiro</h3>
-                <p class="font-body-md text-gray-400">
-                  Arquiteturas robustas para sistemas de alta transacionalidade,
-                  garantindo consistência e integridade de dados em tempo real.
+                <h3 data-i18n="expertise.financeTitle" class="font-h3 text-2xl mb-4">Financial Market</h3>
+                <p data-i18n="expertise.financeText" class="font-body-md text-gray-400">
+                  Robust architectures for high-transaction systems, ensuring
+                  real-time data consistency and integrity.
                 </p>
               </div>
               <div class="mt-8 flex flex-wrap gap-2">
@@ -426,9 +433,8 @@
                 >diamond</span
               >
               <h3 class="font-h3 text-xl mb-4">Ruby on Rails</h3>
-              <p class="font-body-md text-gray-400 text-sm">
-                Agilidade no backend sem comprometer a maturidade do
-                ecossistema.
+              <p data-i18n="expertise.railsText" class="font-body-md text-gray-400 text-sm">
+                Backend agility without compromising ecosystem maturity.
               </p>
             </div>
             <div
@@ -439,9 +445,8 @@
                 >dynamic_feed</span
               >
               <h3 class="font-h3 text-xl mb-4">NextJs &amp; React</h3>
-              <p class="font-body-md text-gray-400 text-sm">
-                Interfaces ultra-rápidas com foco em SEO e experiência do
-                usuário.
+              <p data-i18n="expertise.nextText" class="font-body-md text-gray-400 text-sm">
+                Ultra-fast interfaces focused on SEO and user experience.
               </p>
             </div>
             <div
@@ -452,20 +457,20 @@
                 >devices</span
               >
               <h3 class="font-h3 text-xl mb-4">Flutter</h3>
-              <p class="font-body-md text-gray-400 text-sm">
-                Desenvolvimento cross-platform de alta fidelidade nativa.
+              <p data-i18n="expertise.flutterText" class="font-body-md text-gray-400 text-sm">
+                High-fidelity cross-platform development with native feel.
               </p>
             </div>
             <div
               class="md:col-span-3 glass-card p-10 rounded-3xl flex items-center overflow-hidden"
             >
               <div class="flex-1">
-                <h3 class="font-h3 text-2xl mb-4">
-                  Arquitetura Orientada a Valor
+                <h3 data-i18n="expertise.valueTitle" class="font-h3 text-2xl mb-4">
+                  Value-Oriented Architecture
                 </h3>
-                <p class="font-body-md text-gray-400 max-w-md">
-                  Não construímos apenas código. Construímos motores de
-                  crescimento sustentáveis para o seu negócio.
+                <p data-i18n="expertise.valueText" class="font-body-md text-gray-400 max-w-md">
+                  We do not just build code. We build sustainable growth engines
+                  for your business.
                 </p>
               </div>
               <div class="hidden lg:block w-48 h-48 opacity-20">
@@ -484,18 +489,17 @@
         <div class="max-w-[1440px] mx-auto px-8">
           <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div class="lg:col-span-1">
-              <h2 class="font-h2 text-h2 text-on-surface mb-6">
-                O Pilar da Eficiência
+              <h2 data-i18n="values.title" class="font-h2 text-h2 text-on-surface mb-6">
+                The Pillar of Efficiency
               </h2>
-              <p class="font-body-lg text-on-surface-variant mb-8">
-                A tecnologia deve ser o meio, nunca o fim. Nossa abordagem foca
-                em três pilares fundamentais que sustentam o sucesso de longo
-                prazo.
+              <p data-i18n="values.subtitle" class="font-body-lg text-on-surface-variant mb-8">
+                Technology should be the means, never the end. Our approach is
+                built on three core pillars that sustain long-term success.
               </p>
               <button
                 class="flex items-center gap-2 text-orange-500 font-bold hover:gap-4 transition-all"
               >
-                CONHEÇA NOSSO PROCESSO
+                <span data-i18n="values.cta">DISCOVER OUR PROCESS</span>
                 <span class="material-symbols-outlined">arrow_right_alt</span>
               </button>
             </div>
@@ -503,35 +507,35 @@
               <div
                 class="p-8 border-b md:border-b-0 md:border-r border-white/5"
               >
-                <span class="font-label-caps text-orange-500 block mb-6"
-                  >01. ESCALABILIDADE</span
+                <span data-i18n="values.item1Label" class="font-label-caps text-orange-500 block mb-6"
+                  >01. SCALABILITY</span
                 >
-                <h4 class="font-h3 text-xl mb-4">Crescimento Elástico</h4>
-                <p class="font-body-md text-gray-400">
-                  Sistemas que respiram e crescem conforme a demanda, sem
-                  gargalos técnicos.
+                <h4 data-i18n="values.item1Title" class="font-h3 text-xl mb-4">Elastic Growth</h4>
+                <p data-i18n="values.item1Text" class="font-body-md text-gray-400">
+                  Systems that breathe and grow with demand, without technical
+                  bottlenecks.
                 </p>
               </div>
               <div
                 class="p-8 border-b md:border-b-0 md:border-r border-white/5"
               >
-                <span class="font-label-caps text-purple-500 block mb-6"
-                  >02. SEGURANÇA</span
+                <span data-i18n="values.item2Label" class="font-label-caps text-purple-500 block mb-6"
+                  >02. SECURITY</span
                 >
-                <h4 class="font-h3 text-xl mb-4">Trust by Design</h4>
-                <p class="font-body-md text-gray-400">
-                  Protocolos de segurança integrados desde o primeiro commit da
-                  arquitetura.
+                <h4 data-i18n="values.item2Title" class="font-h3 text-xl mb-4">Trust by Design</h4>
+                <p data-i18n="values.item2Text" class="font-body-md text-gray-400">
+                  Security protocols integrated from the first architecture
+                  commit.
                 </p>
               </div>
               <div class="p-8">
-                <span class="font-label-caps text-tertiary block mb-6"
-                  >03. EFICIÊNCIA</span
+                <span data-i18n="values.item3Label" class="font-label-caps text-tertiary block mb-6"
+                  >03. EFFICIENCY</span
                 >
-                <h4 class="font-h3 text-xl mb-4">Valor Real</h4>
-                <p class="font-body-md text-gray-400">
-                  Otimização de recursos e redução de latência para entrega de
-                  ROI imediato.
+                <h4 data-i18n="values.item3Title" class="font-h3 text-xl mb-4">Real Value</h4>
+                <p data-i18n="values.item3Text" class="font-body-md text-gray-400">
+                  Resource optimization and latency reduction to deliver
+                  immediate ROI.
                 </p>
               </div>
             </div>
@@ -561,20 +565,19 @@
                     >psychology</span
                   >
                 </div>
-                <span class="font-label-caps text-tertiary"
+                <span data-i18n="innovation.label" class="font-label-caps text-tertiary"
                   >LY INTELLIGENCE LAYER</span
                 >
               </div>
-              <h2 class="font-h2 text-h2 text-on-surface mb-8">
-                IA como Catalisador de
+              <h2 data-i18n-html="innovation.title" class="font-h2 text-h2 text-on-surface mb-8">
+                AI as an Engineering
                 <span class="gradient-text">Engenharia</span>
               </h2>
-              <p class="font-body-lg text-on-surface-variant mb-12">
-                Não usamos IA apenas para gerar código, mas como uma ferramenta
-                estratégica de arquitetura. Através de sistemas inteligentes,
-                aceleramos o ciclo de vida do desenvolvimento, detectamos
-                vulnerabilidades preventivamente e aumentamos a precisão técnica
-                em até 40%.
+              <p data-i18n="innovation.subtitle" class="font-body-lg text-on-surface-variant mb-12">
+                We do not use AI only to generate code, but as a strategic
+                architecture capability. Through intelligent systems, we speed
+                up development lifecycles, proactively detect vulnerabilities,
+                and increase technical precision by up to 40%.
               </p>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div class="flex gap-4">
@@ -582,10 +585,10 @@
                     >speed</span
                   >
                   <div>
-                    <h5 class="font-h3 text-lg mb-2">Aceleração de Ciclos</h5>
-                    <p class="font-body-md text-gray-400">
-                      Redução drástica no tempo de prototipagem e validação de
-                      hipóteses.
+                    <h5 data-i18n="innovation.item1Title" class="font-h3 text-lg mb-2">Cycle Acceleration</h5>
+                    <p data-i18n="innovation.item1Text" class="font-body-md text-gray-400">
+                      Dramatic reduction in prototyping and hypothesis
+                      validation time.
                     </p>
                   </div>
                 </div>
@@ -594,10 +597,9 @@
                     >bug_report</span
                   >
                   <div>
-                    <h5 class="font-h3 text-lg mb-2">Redução de Erros</h5>
-                    <p class="font-body-md text-gray-400">
-                      Análise estática avançada por IA para garantir código
-                      limpo e seguro.
+                    <h5 data-i18n="innovation.item2Title" class="font-h3 text-lg mb-2">Error Reduction</h5>
+                    <p data-i18n="innovation.item2Text" class="font-body-md text-gray-400">
+                      Advanced AI static analysis to ensure clean, secure code.
                     </p>
                   </div>
                 </div>
@@ -609,8 +611,8 @@
       <!-- CTA Final -->
       <section class="py-xl" id="contact">
         <div class="max-w-[1440px] mx-auto px-8 text-center">
-          <h2 class="font-h2 text-h2 mb-8">
-            Pronto para elevar sua infraestrutura?
+          <h2 data-i18n="contact.title" class="font-h2 text-h2 mb-8">
+            Ready to elevate your infrastructure?
           </h2>
           <div
             class="flex flex-col md:flex-row justify-center items-center gap-6"
@@ -622,10 +624,9 @@
               <span class="font-body-md">fellype.ads@gmail.com</span>
             </div>
             <button
-              id="whatsapp-cta"
-              class="bg-gradient-to-r from-orange-500 to-purple-600 text-white px-12 py-5 rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-purple-500/20 transition-all active:scale-95"
+              class="js-whatsapp-cta bg-gradient-to-r from-orange-500 to-purple-600 text-white px-12 py-5 rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-purple-500/20 transition-all active:scale-95"
             >
-              Iniciar Diagnóstico
+              <span data-i18n="contact.cta">Start Diagnosis</span>
             </button>
           </div>
         </div>
@@ -642,7 +643,7 @@
           >
             Lly
           </div>
-          <p class="font-noto-serif text-sm text-gray-500">
+          <p data-i18n="footer.copyright" class="font-noto-serif text-sm text-gray-500">
             © 2026 Lly Architecture. All rights reserved.
           </p>
         </div>
@@ -660,7 +661,7 @@
         </div>
         <div class="flex items-center gap-2">
           <span class="w-3 h-3 bg-tertiary rounded-full"></span>
-          <span class="text-xs font-label-caps text-gray-400"
+          <span data-i18n="footer.status" class="text-xs font-label-caps text-gray-400"
             >INFRASTRUCTURE STABLE</span
           >
         </div>
@@ -675,18 +676,171 @@
         return url.toString();
       }
 
-      const whatsappButton = document.getElementById("whatsapp-cta");
+      const translations = {
+        en: {
+          "nav.about": "About",
+          "nav.specialties": "Specialties",
+          "nav.values": "Values",
+          "nav.innovation": "Innovation",
+          "nav.contact": "Contact",
+          "hero.availability": "AVAILABLE FOR NEW PROJECTS",
+          "hero.titleLine1": "Solid foundation.",
+          "hero.titleLine2": "Infinite possibilities.",
+          "hero.subtitle": "Specialized consultancy in high-performance software architecture, combining enterprise-grade stability with cutting-edge innovation for scalable digital ecosystems.",
+          "hero.ctaPrimary": "Schedule Consultancy",
+          "hero.ctaSecondary": "View Expertise",
+          "hero.statYears": "YEARS OF EXPERIENCE",
+          "hero.statAvailability": "ARCHITECTED AVAILABILITY",
+          "about.label": "THE FOUNDER",
+          "about.bio": "Founder of Lly Architecture, Fellype brings over 15 years of technical expertise, working at the intersection of rigorous software engineering and visionary architecture. Across complex industries, he has consistently turned technical challenges into competitive market advantages.",
+          "about.pillar1Title": "Multidisciplinary",
+          "about.pillar1Text": "Performance as a senior engineer and architect in mission-critical environments.",
+          "about.pillar2Title": "Strategic",
+          "about.pillar2Text": "Focused on aligning technical debt decisions with real business goals.",
+          "expertise.label": "Technology & Domain",
+          "expertise.title": "Specialization in Fintechs",
+          "expertise.financeTitle": "Financial Market",
+          "expertise.financeText": "Robust architectures for high-transaction systems, ensuring real-time data consistency and integrity.",
+          "expertise.railsText": "Backend agility without compromising ecosystem maturity.",
+          "expertise.nextText": "Ultra-fast interfaces focused on SEO and user experience.",
+          "expertise.flutterText": "High-fidelity cross-platform development with native feel.",
+          "expertise.valueTitle": "Value-Oriented Architecture",
+          "expertise.valueText": "We do not just build code. We build sustainable growth engines for your business.",
+          "values.title": "The Pillar of Efficiency",
+          "values.subtitle": "Technology should be the means, never the end. Our approach is built on three core pillars that sustain long-term success.",
+          "values.cta": "DISCOVER OUR PROCESS",
+          "values.item1Label": "01. SCALABILITY",
+          "values.item1Title": "Elastic Growth",
+          "values.item1Text": "Systems that breathe and grow with demand, without technical bottlenecks.",
+          "values.item2Label": "02. SECURITY",
+          "values.item2Title": "Trust by Design",
+          "values.item2Text": "Security protocols integrated from the first architecture commit.",
+          "values.item3Label": "03. EFFICIENCY",
+          "values.item3Title": "Real Value",
+          "values.item3Text": "Resource optimization and latency reduction to deliver immediate ROI.",
+          "innovation.label": "LY INTELLIGENCE LAYER",
+          "innovation.title": "<span class=\"gradient-text\">AI</span> as an Engineering Catalyst",
+          "innovation.subtitle": "We do not use AI only to generate code, but as a strategic architecture capability. Through intelligent systems, we speed up development lifecycles, proactively detect vulnerabilities, and increase technical precision by up to 40%.",
+          "innovation.item1Title": "Cycle Acceleration",
+          "innovation.item1Text": "Dramatic reduction in prototyping and hypothesis validation time.",
+          "innovation.item2Title": "Error Reduction",
+          "innovation.item2Text": "Advanced AI static analysis to ensure clean, secure code.",
+          "contact.title": "Ready to elevate your infrastructure?",
+          "contact.cta": "Start Diagnosis",
+          "footer.copyright": "© 2026 Lly Architecture. All rights reserved.",
+          "footer.status": "INFRASTRUCTURE STABLE",
+          whatsappMessage:
+            "Hello, I came through the website and would like to know more about amplifying my architecture to reach new levels",
+        },
+        pt: {
+          "nav.about": "Sobre",
+          "nav.specialties": "Especialidades",
+          "nav.values": "Valores",
+          "nav.innovation": "Inovação",
+          "nav.contact": "Contato",
+          "hero.availability": "DISPONIVEL PARA NOVOS PROJETOS",
+          "hero.titleLine1": "Base sólida.",
+          "hero.titleLine2": "Infinitas possibilidades.",
+          "hero.subtitle": "Consultoria especializada em arquitetura de software de alta performance, unindo estabilidade corporativa e inovacao de ponta para ecossistemas digitais escalaveis.",
+          "hero.ctaPrimary": "Agendar Consultoria",
+          "hero.ctaSecondary": "Ver Expertise",
+          "hero.statYears": "ANOS DE EXPERIENCIA",
+          "hero.statAvailability": "DISPONIBILIDADE ARQUITETADA",
+          "about.label": "O FUNDADOR",
+          "about.bio": "Fundador da Lly Architecture, Fellype acumula mais de 15 anos de trajetoria tecnica, atuando na interseccao entre engenharia de software rigorosa e arquitetura visionaria. Com passagens por multiplos setores complexos, transformou desafios tecnicos em vantagens competitivas de mercado.",
+          "about.pillar1Title": "Multidisciplinar",
+          "about.pillar1Text": "Atuacao como engenheiro senior e arquiteto em ambientes de missao critica.",
+          "about.pillar2Title": "Estrategico",
+          "about.pillar2Text": "Foco em alinhar debitos tecnicos com objetivos reais de negocio.",
+          "expertise.label": "Tecnologia & Dominio",
+          "expertise.title": "Especializacao em Fintechs",
+          "expertise.financeTitle": "Mercado Financeiro",
+          "expertise.financeText": "Arquiteturas robustas para sistemas de alta transacionalidade, garantindo consistencia e integridade de dados em tempo real.",
+          "expertise.railsText": "Agilidade no backend sem comprometer a maturidade do ecossistema.",
+          "expertise.nextText": "Interfaces ultra-rapidas com foco em SEO e experiencia do usuario.",
+          "expertise.flutterText": "Desenvolvimento cross-platform de alta fidelidade nativa.",
+          "expertise.valueTitle": "Arquitetura Orientada a Valor",
+          "expertise.valueText": "Nao construimos apenas codigo. Construimos motores de crescimento sustentaveis para o seu negocio.",
+          "values.title": "O Pilar da Eficiencia",
+          "values.subtitle": "A tecnologia deve ser o meio, nunca o fim. Nossa abordagem foca em tres pilares fundamentais que sustentam o sucesso de longo prazo.",
+          "values.cta": "CONHECA NOSSO PROCESSO",
+          "values.item1Label": "01. ESCALABILIDADE",
+          "values.item1Title": "Crescimento Elastico",
+          "values.item1Text": "Sistemas que respiram e crescem conforme a demanda, sem gargalos tecnicos.",
+          "values.item2Label": "02. SEGURANCA",
+          "values.item2Title": "Confiança por Design",
+          "values.item2Text": "Protocolos de seguranca integrados desde o primeiro commit da arquitetura.",
+          "values.item3Label": "03. EFICIENCIA",
+          "values.item3Title": "Valor Real",
+          "values.item3Text": "Otimizacao de recursos e reducao de latencia para entrega de ROI imediato.",
+          "innovation.label": "LY INTELLIGENCE LAYER",
+          "innovation.title": "<span class=\"gradient-text\">IA</span> como Catalisador de Engenharia",
+          "innovation.subtitle": "Nao usamos IA apenas para gerar codigo, mas como uma ferramenta estrategica de arquitetura. Atraves de sistemas inteligentes, aceleramos o ciclo de vida do desenvolvimento, detectamos vulnerabilidades preventivamente e aumentamos a precisao tecnica em ate 40%.",
+          "innovation.item1Title": "Aceleracao de Ciclos",
+          "innovation.item1Text": "Reducao drastica no tempo de prototipagem e validacao de hipoteses.",
+          "innovation.item2Title": "Reducao de Erros",
+          "innovation.item2Text": "Analise estatica avancada por IA para garantir codigo limpo e seguro.",
+          "contact.title": "Pronto para elevar sua infraestrutura?",
+          "contact.cta": "Iniciar Diagnostico",
+          "footer.copyright": "© 2026 Lly Architecture. Todos os direitos reservados.",
+          "footer.status": "INFRAESTRUTURA ESTAVEL",
+          whatsappMessage:
+            "Ola, vim atraves do site e gostaria de saber mais como amplificar minha arquitetura para alcancar novos patamares",
+        },
+      };
 
-      if (whatsappButton) {
-        whatsappButton.addEventListener("click", () => {
+      const langPt = document.getElementById("lang-pt");
+      const langEn = document.getElementById("lang-en");
+      const whatsappButtons = document.querySelectorAll(".js-whatsapp-cta");
+
+      let currentLanguage = "en";
+
+      function setLanguage(lang) {
+        const dict = translations[lang];
+        currentLanguage = lang;
+
+        document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
+
+        document.querySelectorAll("[data-i18n]").forEach((node) => {
+          const key = node.getAttribute("data-i18n");
+          if (key && dict[key]) {
+            node.textContent = dict[key];
+          }
+        });
+
+        document.querySelectorAll("[data-i18n-html]").forEach((node) => {
+          const key = node.getAttribute("data-i18n-html");
+          if (key && dict[key]) {
+            node.innerHTML = dict[key];
+          }
+        });
+
+        if (lang === "pt") {
+          langPt.className = "text-orange-500 cursor-pointer";
+          langEn.className = "text-gray-400 hover:text-white cursor-pointer";
+        } else {
+          langEn.className = "text-orange-500 cursor-pointer";
+          langPt.className = "text-gray-400 hover:text-white cursor-pointer";
+        }
+      }
+
+      if (langPt && langEn) {
+        langPt.addEventListener("click", () => setLanguage("pt"));
+        langEn.addEventListener("click", () => setLanguage("en"));
+      }
+
+      whatsappButtons.forEach((button) => {
+        button.addEventListener("click", () => {
           const link = generateWhatsAppLink(
             "+5511982728982",
-            "Olá, vim através do site e gostaria de saber mais como amplificar minha arquitetura para alcançar novos patamares",
+            translations[currentLanguage].whatsappMessage,
           );
 
           window.open(link, "_blank", "noopener,noreferrer");
         });
-      }
+      });
+
+      setLanguage("en");
     </script>
   </body>
 </html>
