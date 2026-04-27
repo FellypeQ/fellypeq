@@ -295,6 +295,7 @@
           </div>
           <div class="flex items-center gap-4 text-gray-400">
             <span
+              id="language-toggle"
               class="material-symbols-outlined cursor-pointer hover:text-orange-500 transition-colors"
               >language</span
             >
@@ -862,6 +863,7 @@
 
       const langPt = document.getElementById("lang-pt");
       const langEn = document.getElementById("lang-en");
+      const languageToggle = document.getElementById("language-toggle");
       const whatsappButtons = document.querySelectorAll(".js-whatsapp-cta");
       const themeToggle = document.getElementById("theme-toggle");
 
@@ -940,6 +942,12 @@
       if (langPt && langEn) {
         langPt.addEventListener("click", () => setLanguage("pt"));
         langEn.addEventListener("click", () => setLanguage("en"));
+      }
+
+      if (languageToggle) {
+        languageToggle.addEventListener("click", () => {
+          setLanguage(currentLanguage === "en" ? "pt" : "en");
+        });
       }
 
       if (themeToggle) {
